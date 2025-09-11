@@ -18,7 +18,7 @@ export const ContactSection = () => {
     {
       name: "GitHub",
       icon: <FaGithub />,
-      link: "https://github.com/jonelchico",
+      link: "https://github.com/jonelchico-webdev",
     },
   ];
 
