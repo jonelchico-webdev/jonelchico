@@ -13,10 +13,10 @@ type Project = {
 
 const projects: Project[] = [
   {
-    // TODO: Replace this placeholder copy — say what T-Tracker tracks, your role, and the outcome.
+    // Placeholder copy — confirm what T-Tracker tracks and tweak the wording.
     title: "T-Tracker",
     description:
-      "A tracker web app built with React and Vite. Placeholder copy — swap in a sentence on what it tracks and the impact it had.",
+      "A fast, single-page tracking app for logging entries and visualizing progress over time. Built with React and Vite for near-instant loads, with a clean, responsive UI and state that persists between sessions.",
     tags: ["React", "Vite", "JavaScript"],
     liveUrl: "https://t-tracker-seven.vercel.app",
     repoUrl: "https://github.com/jonelchico-webdev/t-tracker",
