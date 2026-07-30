@@ -32,8 +32,16 @@ export const ContactSection = () => {
       viewport={{ once: true }}
     >
       {/* Background blobs */}
-      <div className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-green-500 opacity-20 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2 animate-blob"></div>
-      <div className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-blue-500 opacity-20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+      <motion.div
+        className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-green-500 opacity-20 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"
+        animate={{ x: [0, 60, 0], y: [0, -40, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute bottom-0 right-1/3 w-[400px] h-[400px] bg-blue-500 opacity-20 rounded-full filter blur-3xl"
+        animate={{ x: [0, -50, 0], y: [0, 40, 0] }}
+        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+      />
 
       <h2 className="text-3xl font-semibold mb-6 text-green-400">Contact Me</h2>
       <p className="mb-12 max-w-xl mx-auto text-gray-300">
