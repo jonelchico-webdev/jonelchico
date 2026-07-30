@@ -17,7 +17,15 @@ const projects: Project[] = [
     title: "T-Tracker",
     description:
       "A fast, single-page tracking app for logging entries and visualizing progress over time. Built with React and Vite for near-instant loads, with a clean, responsive UI and state that persists between sessions.",
-    tags: ["React", "Vite", "JavaScript"],
+    tags: [
+      "React",
+      "Vite",
+      "JavaScript",
+      "Supabase",
+      "Tailwind CSS",
+      "React Router",
+      "jsPDF",
+    ],
     liveUrl: "https://t-tracker-seven.vercel.app",
     repoUrl: "https://github.com/jonelchico-webdev/t-tracker",
   },
@@ -25,8 +33,19 @@ const projects: Project[] = [
     // Private repo — no public live/repo links. Copy derived from the project README.
     title: "EMR API — Electronic Medical Records Backend",
     description:
-      "Production-ready backend for an EMR system: multi-clinic support with role-based access, AES-256-GCM encryption for clinical notes, prescriptions and lab results, doctor scheduling, and 72 passing e2e tests.",
-    tags: ["NestJS", "TypeScript", "PostgreSQL", "Prisma"],
+      "Production-ready backend for an EMR system: multi-clinic support with role-based access, AES-256-GCM encryption for clinical notes, prescriptions and lab results, and doctor scheduling.",
+    tags: [
+      "NestJS",
+      "TypeScript",
+      "PostgreSQL",
+      "Prisma",
+      "Fastify",
+      "Redis",
+      "AWS S3",
+      "JWT",
+      "Swagger",
+      "Jest",
+    ],
   },
 ];
 
