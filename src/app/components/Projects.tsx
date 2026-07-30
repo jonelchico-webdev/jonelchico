@@ -11,31 +11,22 @@ type Project = {
   repoUrl?: string;
 };
 
-// TODO: Replace these placeholders with your real work.
 const projects: Project[] = [
   {
-    title: "Project One",
+    // TODO: Replace this placeholder copy — say what T-Tracker tracks, your role, and the outcome.
+    title: "T-Tracker",
     description:
-      "One or two sentences on the problem it solved, your role, and the impact. Lead with the outcome, not the tech.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    liveUrl: "#",
-    repoUrl: "#",
+      "A tracker web app built with React and Vite. Placeholder copy — swap in a sentence on what it tracks and the impact it had.",
+    tags: ["React", "Vite", "JavaScript"],
+    liveUrl: "https://t-tracker-seven.vercel.app",
+    repoUrl: "https://github.com/jonelchico-webdev/t-tracker",
   },
   {
-    title: "Project Two",
+    // Private repo — no public live/repo links. Copy derived from the project README.
+    title: "EMR API — Electronic Medical Records Backend",
     description:
-      "One or two sentences on the problem it solved, your role, and the impact. Lead with the outcome, not the tech.",
-    tags: ["React", "Node.js", "Stripe"],
-    liveUrl: "#",
-    repoUrl: "#",
-  },
-  {
-    title: "Project Three",
-    description:
-      "One or two sentences on the problem it solved, your role, and the impact. Lead with the outcome, not the tech.",
-    tags: ["Next.js", "Sanity", "MUI"],
-    liveUrl: "#",
-    repoUrl: "#",
+      "Production-ready backend for an EMR system: multi-clinic support with role-based access, AES-256-GCM encryption for clinical notes, prescriptions and lab results, doctor scheduling, and 72 passing e2e tests.",
+    tags: ["NestJS", "TypeScript", "PostgreSQL", "Prisma"],
   },
 ];
 
