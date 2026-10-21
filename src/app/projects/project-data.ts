@@ -16,9 +16,9 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     title: "T-Tracker",
     eyebrow: "TaskTrack · Productivity",
     summary:
-      "A task management app that brings a task dashboard and calendar into one place.",
+      "A task-management app with a dashboard for organizing work and a calendar for planning by date.",
     overview:
-      "TaskTrack is organized around two ways to work with tasks: a dashboard for managing and reviewing them, and a calendar for planning by date. The dashboard supports status and priority workflows, plus search and filtering.",
+      "TaskTrack combines task organization and calendar planning in one app. Users can create and manage tasks, search and filter the dashboard, update status and priority, and move work between dates in the calendar.",
     highlights: [
       {
         title: "Task dashboard",
@@ -50,17 +50,17 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
   },
   {
     slug: "konsultech",
-    title: "EMR API — Electronic Medical Records Backend",
+    title: "KonsulTech — Multi-clinic EMR",
     eyebrow: "KonsulTech · Healthcare",
     summary:
-      "A secure, multi-service electronic medical records platform built to support day-to-day patient and consultation workflows.",
+      "Owned backend engineering for a secure, multi-service EMR platform supporting patient records, appointments, and consultations across multiple clinics.",
     overview:
-      "KonsulTech brings patient records, appointments, and consultations into one platform for Philippine healthcare facilities. I owned the secure, multi-service EMR platform, with backend services supporting the product's scheduling, clinical notes, prescriptions, patient queues, and multi-facility workflows.",
+      "KonsulTech brings patient records, appointments, and consultations into one platform for Philippine healthcare facilities. I owned backend engineering for the secure, multi-service EMR platform, built with NestJS, PostgreSQL, and Prisma. AES-256-GCM encryption protects clinical notes, prescriptions, and lab results.",
     highlights: [
       {
         title: "Patient records",
         description:
-          "Keep patient information and visit history available as part of the care workflow.",
+          "Support patient information and visit history as part of the clinical workflow.",
       },
       {
         title: "Appointments and consultations",
@@ -70,12 +70,12 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
       {
         title: "Prescriptions and facilities",
         description:
-          "Support prescription workflows and the ability to work across multiple facilities.",
+          "Support prescription workflows and day-to-day work across multiple facilities.",
       },
       {
         title: "Secure clinical data",
         description:
-          "Protect clinical notes, prescriptions, and lab results with AES-256-GCM encryption.",
+          "Use AES-256-GCM encryption to protect clinical notes, prescriptions, and lab results.",
       },
     ],
     technologies: [
@@ -97,9 +97,9 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     title: "B1T1 Shawarma",
     eyebrow: "Restaurant website · Food & beverage",
     summary:
-      "A lively restaurant website that brings the menu, current promos, nearby branches, and franchise information together.",
+      "A brand website bringing B1T1 Shawarma’s buy-one-take-one offer, menu, promotions, branch finder, and franchise information together.",
     overview:
-      "The B1T1 Shawarma website introduces the brand and its buy-one-take-one offer, then helps visitors browse food, find a branch, order, or learn about franchising.",
+      "The site introduces the brand and its buy-one-take-one offer, then gives visitors direct paths to browse shawarma wraps and other menu items, check promotions, find a branch, order, or learn about franchising.",
     highlights: [
       {
         title: "Menu discovery",
