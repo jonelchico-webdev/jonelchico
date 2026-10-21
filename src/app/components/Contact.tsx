@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { FaEnvelope, FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 
 export const ContactSection = () => {
@@ -23,16 +20,12 @@ export const ContactSection = () => {
   ];
 
   return (
-    <motion.section
+    <section
       id="contact"
       className="relative overflow-hidden px-6 py-24 text-[#f2f4ef] sm:py-32"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
     >
       <div aria-hidden="true" className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#8bbd38]/10 blur-3xl" />
-      <div className="relative mx-auto max-w-6xl rounded-3xl border border-white/10 bg-[#111511] p-8 sm:p-12 lg:p-16">
+      <div data-reveal className="relative mx-auto max-w-6xl rounded-3xl border border-white/10 bg-[#111511] p-8 sm:p-12 lg:p-16">
         <div className="grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#c7f36b]">Have a project in mind?</p>
@@ -49,6 +42,13 @@ export const ContactSection = () => {
           </a>
         </div>
         <div className="mt-10 flex flex-wrap gap-3 border-t border-white/10 pt-6">
+          <a
+            href="mailto:jonelrocchico@gmail.com"
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/10 px-4 text-sm text-white/70 transition-colors hover:border-white/30 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]"
+          >
+            <FaEnvelope aria-hidden="true" />
+            jonelrocchico@gmail.com
+          </a>
           {contacts.slice(1).map((contact) => (
             <a
               key={contact.name}
@@ -71,9 +71,9 @@ export const ContactSection = () => {
           </a>
         </div>
       </div>
-      <footer className="relative mx-auto mt-10 max-w-6xl text-xs text-white/35">
+      <footer className="relative mx-auto mt-10 max-w-6xl text-xs text-white/50">
         © {new Date().getFullYear()} Jonel Chico
       </footer>
-    </motion.section>
+    </section>
   );
 };

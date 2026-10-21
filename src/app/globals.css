@@ -40,3 +40,51 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/*
+ * Hero intro pre-state, set by the boot script in layout.tsx before first paint.
+ * SiteMotion (GSAP) removes .motion-pending and animates from here. If JS never runs,
+ * the fallback animation reveals everything after a short delay.
+ * The headline and avatar keep full opacity so they still paint (and count for LCP) immediately.
+ */
+@keyframes motion-fallback {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .motion-pending [data-hero] {
+    transform: translate3d(0, 18px, 0);
+    animation: motion-fallback 0.6s ease-out 2.5s forwards;
+  }
+
+  .motion-pending [data-hero="item"] {
+    opacity: 0;
+  }
+}
+
+/* Keep the dot field soft at the edges so it frames the content rather than sitting behind it. */
+.hero-dots {
+  mask-image: radial-gradient(ellipse 85% 75% at 55% 45%, #000 35%, transparent 100%);
+}
+
+/* Availability badge: a soft halo that expands from the status dot. */
+@keyframes status-pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(2.6);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .status-pulse {
+    animation: status-pulse 2.4s ease-out infinite;
+  }
+}

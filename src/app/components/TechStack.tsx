@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 const stackGroups = [
   {
     title: "Frontend",
@@ -14,8 +10,11 @@ const stackGroups = [
       "Tailwind CSS",
       "MUI",
       "Vite",
+      "Redux Toolkit",
+      "React Query",
       "GSAP",
       "React Router",
+      "Storybook",
       "Shared component libraries",
     ],
   },
@@ -32,7 +31,7 @@ const stackGroups = [
       "Prisma",
       "Redis",
       "Supabase",
-      "AWS S3",
+      "Cloudflare R2",
       "JWT",
       "Swagger",
     ],
@@ -42,8 +41,12 @@ const stackGroups = [
     description: "Confidence and visibility in production.",
     technologies: [
       "OpenTelemetry",
+      "Uptrace",
       "Sentry",
       "Jest",
+      "Vitest",
+      "Cypress",
+      "Playwright",
       "Unit testing",
       "Integration testing",
       "End-to-end testing",
@@ -54,6 +57,9 @@ const stackGroups = [
     description: "Services and tools used across shipped products.",
     technologies: [
       "Git",
+      "Docker",
+      "OpenAI API",
+      "Claude API",
       "Stripe",
       "Sanity",
       "jsPDF",
@@ -63,16 +69,12 @@ const stackGroups = [
 
 export const TechStackSection = () => {
   return (
-    <motion.section
+    <section
       id="tech"
       className="border-y border-white/10 bg-[#101410] px-6 py-20 text-[#f2f4ef] sm:py-24"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="mb-10 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
+        <div data-reveal className="mb-10 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
           <div>
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#c7f36b]">
               The toolkit
@@ -88,14 +90,11 @@ export const TechStackSection = () => {
         </div>
 
         <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-          {stackGroups.map((group, index) => (
-            <motion.article
+          {stackGroups.map((group) => (
+            <article
               key={group.title}
+              data-reveal-item
               className="rounded-2xl border border-white/10 bg-[#0b0e0c] p-5 sm:p-6"
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
-              viewport={{ once: true }}
             >
               <div className="mb-5 border-b border-white/10 pb-4">
                 <h3 className="text-lg font-semibold text-white">{group.title}</h3>
@@ -113,10 +112,10 @@ export const TechStackSection = () => {
                   </li>
                 ))}
               </ul>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
