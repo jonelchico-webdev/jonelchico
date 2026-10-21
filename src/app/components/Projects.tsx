@@ -46,6 +46,7 @@ const projects: Project[] = [
       "Swagger",
       "Jest",
     ],
+    liveUrl: "https://konsultech.app",
   },
   {
     title: "B1T1 Shawarma",
