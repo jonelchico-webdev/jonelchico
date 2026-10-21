@@ -14,21 +14,21 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jonelchico.com"),
-  title: "Jonel Chico — Software Engineer",
+  title: "Jonel Chico — Software Engineer & Full-Stack Developer",
   description:
-    "Full-stack software engineer with 6+ years building scalable, user-focused web applications with React, Next.js, and TypeScript.",
+    "Software Engineer and full-stack developer with 7+ years building production React and TypeScript applications, backend services, and enterprise and B2B SaaS platforms.",
   openGraph: {
-    title: "Jonel Chico — Software Engineer",
+    title: "Jonel Chico — Software Engineer & Full-Stack Developer",
     description:
-      "Full-stack software engineer building scalable, user-focused web applications with React, Next.js, and TypeScript.",
+      "Software Engineer and full-stack developer with 7+ years building production React and TypeScript applications, backend services, and enterprise and B2B SaaS platforms.",
     type: "website",
     images: ["/avatar.jpg"],
   },
   twitter: {
     card: "summary",
-    title: "Jonel Chico — Software Engineer",
+    title: "Jonel Chico — Software Engineer & Full-Stack Developer",
     description:
-      "Full-stack software engineer building scalable, user-focused web applications.",
+      "Software Engineer and full-stack developer building production React and TypeScript applications and backend services.",
     images: ["/avatar.jpg"],
   },
 };

@@ -22,15 +22,17 @@ export const HeroSection = () => {
         <div className="order-2 md:order-1">
           <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-[#c7f36b] sm:text-sm">
             <span aria-hidden="true" className="h-px w-8 bg-[#c7f36b]" />
-            Full-stack software engineer
+            Software engineer · Full-stack
           </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.06] tracking-[-0.05em] sm:text-6xl md:text-7xl">
-            I build digital products that{" "}
-            <span className="text-[#c7f36b]">make a difference.</span>
+            Full-stack products,{" "}
+            <span className="text-[#c7f36b]">built to last.</span>
           </h1>
           <p className="mt-7 max-w-xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
-            I’m Jonel Chico, a full-stack engineer with 6+ years of experience
-            turning complex ideas into thoughtful, reliable web experiences.
+            I’m Jonel Chico, a Software Engineer with 7+ years building and
+            owning production applications across the stack—from high-traffic
+            React and TypeScript enterprise platforms to backend services for
+            performance-sensitive B2B SaaS.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <a

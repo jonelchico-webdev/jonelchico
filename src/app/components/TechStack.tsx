@@ -16,12 +16,15 @@ const stackGroups = [
       "Vite",
       "GSAP",
       "React Router",
+      "Shared component libraries",
     ],
   },
   {
-    title: "Backend & data",
-    description: "APIs, persistence, and application infrastructure.",
+    title: "APIs & backend",
+    description: "Frontend integration and backend systems.",
     technologies: [
+      "GraphQL",
+      "Apollo Client",
       "Node.js",
       "NestJS",
       "Fastify",
@@ -32,13 +35,29 @@ const stackGroups = [
       "AWS S3",
       "JWT",
       "Swagger",
+    ],
+  },
+  {
+    title: "Quality & observability",
+    description: "Confidence and visibility in production.",
+    technologies: [
+      "OpenTelemetry",
+      "Sentry",
       "Jest",
+      "Unit testing",
+      "Integration testing",
+      "End-to-end testing",
     ],
   },
   {
     title: "Platforms & tooling",
-    description: "The services and tools behind shipped products.",
-    technologies: ["Git", "Stripe", "Sanity", "jsPDF"],
+    description: "Services and tools used across shipped products.",
+    technologies: [
+      "Git",
+      "Stripe",
+      "Sanity",
+      "jsPDF",
+    ],
   },
 ];
 
@@ -68,7 +87,7 @@ export const TechStackSection = () => {
           </p>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {stackGroups.map((group, index) => (
             <motion.article
               key={group.title}

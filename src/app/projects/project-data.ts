@@ -53,9 +53,9 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
     title: "EMR API — Electronic Medical Records Backend",
     eyebrow: "KonsulTech · Healthcare",
     summary:
-      "A multi-clinic electronic medical records backend built to support day-to-day patient and consultation workflows.",
+      "A secure, multi-service electronic medical records platform built to support day-to-day patient and consultation workflows.",
     overview:
-      "KonsulTech brings patient records, appointments, and consultations into one platform for Philippine healthcare facilities. The public product preview highlights scheduling, clinical notes, prescriptions, patient queues, and multi-facility support.",
+      "KonsulTech brings patient records, appointments, and consultations into one platform for Philippine healthcare facilities. I owned the secure, multi-service EMR platform, with backend services supporting the product's scheduling, clinical notes, prescriptions, patient queues, and multi-facility workflows.",
     highlights: [
       {
         title: "Patient records",
@@ -71,6 +71,11 @@ export const projectCaseStudies: ProjectCaseStudy[] = [
         title: "Prescriptions and facilities",
         description:
           "Support prescription workflows and the ability to work across multiple facilities.",
+      },
+      {
+        title: "Secure clinical data",
+        description:
+          "Protect clinical notes, prescriptions, and lab results with AES-256-GCM encryption.",
       },
     ],
     technologies: [
