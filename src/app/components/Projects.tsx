@@ -1,61 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-
-type Project = {
-  title: string;
-  description: string;
-  tags: string[];
-  liveUrl?: string;
-  repoUrl?: string;
-};
-
-const projects: Project[] = [
-  {
-    // Placeholder copy — confirm what T-Tracker tracks and tweak the wording.
-    title: "T-Tracker",
-    description:
-      "A fast, single-page tracking app for logging entries and visualizing progress over time. Built with React and Vite for near-instant loads, with a clean, responsive UI and state that persists between sessions.",
-    tags: [
-      "React",
-      "Vite",
-      "JavaScript",
-      "Supabase",
-      "Tailwind CSS",
-      "React Router",
-      "jsPDF",
-    ],
-    liveUrl: "https://t-tracker-seven.vercel.app",
-    repoUrl: "https://github.com/jonelchico-webdev/t-tracker",
-  },
-  {
-    // Private repo — no public live/repo links. Copy derived from the project README.
-    title: "EMR API — Electronic Medical Records Backend",
-    description:
-      "Production-ready backend for an EMR system: multi-clinic support with role-based access, AES-256-GCM encryption for clinical notes, prescriptions and lab results, and doctor scheduling.",
-    tags: [
-      "NestJS",
-      "TypeScript",
-      "PostgreSQL",
-      "Prisma",
-      "Fastify",
-      "Redis",
-      "AWS S3",
-      "JWT",
-      "Swagger",
-      "Jest",
-    ],
-    liveUrl: "https://konsultech.app",
-  },
-  {
-    title: "B1T1 Shawarma",
-    description:
-      "A promotional website for B1T1 Shawarma, featuring buy-one-take-one shawarma wraps, rice meals, sides, and franchise information.",
-    tags: ["JavaScript", "Vite", "GSAP"],
-    liveUrl: "https://b1t1shawarma.com",
-  },
-];
+import { projectCaseStudies } from "../projects/project-data";
 
 export const ProjectsSection = () => {
   return (
@@ -78,7 +26,7 @@ export const ProjectsSection = () => {
           </p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project, index) => (
+        {projectCaseStudies.map((project, index) => (
           <motion.article
             key={project.title}
             className="group flex flex-col rounded-2xl border border-white/10 bg-[#111511] p-6 transition-colors duration-200 hover:border-[#c7f36b]/40 hover:bg-[#141914]"
@@ -97,11 +45,11 @@ export const ProjectsSection = () => {
               {project.title}
             </h3>
             <p className="mb-6 flex-grow text-sm leading-6 text-white/60">
-              {project.description}
+              {project.summary}
             </p>
 
             <div className="mb-6 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
+              {project.technologies.map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-white/60"
@@ -111,7 +59,13 @@ export const ProjectsSection = () => {
               ))}
             </div>
 
-            <div className="mt-auto flex gap-5 border-t border-white/10 pt-4">
+            <div className="mt-auto flex flex-wrap gap-x-5 border-t border-white/10 pt-4">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="inline-flex min-h-11 items-center text-sm font-medium text-white/65 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]"
+              >
+                Case study
+              </Link>
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
