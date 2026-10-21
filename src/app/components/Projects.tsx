@@ -47,6 +47,13 @@ const projects: Project[] = [
       "Jest",
     ],
   },
+  {
+    title: "B1T1 Shawarma",
+    description:
+      "A promotional website for B1T1 Shawarma, featuring buy-one-take-one shawarma wraps, rice meals, sides, and franchise information.",
+    tags: ["JavaScript", "Vite", "GSAP"],
+    liveUrl: "https://b1t1shawarma.com",
+  },
 ];
 
 export const ProjectsSection = () => {
