@@ -5,104 +5,61 @@ import Image from "next/image";
 
 export const HeroSection = () => {
   return (
-    <section className="relative flex flex-col items-center justify-center h-screen px-6 bg-gradient-to-b from-gray-900 via-gray-950 to-black overflow-hidden">
-      {/* Dynamic Background Blobs */}
+    <section
+      id="home"
+      className="relative isolate flex min-h-[calc(100svh-65px)] items-center overflow-hidden px-6 py-20"
+    >
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -right-40 top-10 h-[32rem] w-[32rem] rounded-full bg-[#8bbd38]/10 blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_10%,rgba(199,243,107,0.06),transparent_45%)]" />
+      </div>
       <motion.div
-        className="absolute w-96 h-96 bg-green-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-        animate={{ x: [0, 100, 0], y: [0, -100, 0] }}
-        transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute w-96 h-96 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-        animate={{ x: [0, -100, 0], y: [0, 100, 0] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"
-        animate={{ x: [100, -100, 100], y: [50, -50, 50] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-      />
-
-      {/* Content */}
-      <motion.div
-        className="relative z-10 text-center flex flex-col items-center"
-        initial={{ opacity: 0, y: 20 }}
+        className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[1fr_auto] md:gap-16"
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.65, ease: "easeOut" }}
       >
-        {/* Profile Avatar */}
-        <motion.div
-          className="relative w-44 h-44 rounded-full overflow-hidden shadow-lg mb-6 cursor-pointer"
-          animate={{
-            boxShadow: [
-              "0 0 20px rgba(34,197,94,0.6)", // green-500 glow
-              "0 0 20px rgba(20,184,166,0.6)", // teal-500 glow
-              "0 0 20px rgba(59,130,246,0.6)", // blue-500 glow
-            ],
-          }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
-          whileHover={{
-            scale: 1.05,
-            rotateX: 5,
-            rotateY: -5,
-          }}
-          whileTap={{ scale: 0.98 }}
-        >
+        <div className="order-2 md:order-1">
+          <p className="mb-6 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.22em] text-[#c7f36b] sm:text-sm">
+            <span aria-hidden="true" className="h-px w-8 bg-[#c7f36b]" />
+            Full-stack software engineer
+          </p>
+          <h1 className="max-w-3xl text-5xl font-semibold leading-[1.06] tracking-[-0.05em] sm:text-6xl md:text-7xl">
+            I build digital products that{" "}
+            <span className="text-[#c7f36b]">make a difference.</span>
+          </h1>
+          <p className="mt-7 max-w-xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
+            I’m Jonel Chico, a full-stack engineer with 6+ years of experience
+            turning complex ideas into thoughtful, reliable web experiences.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#c7f36b] px-6 text-sm font-semibold text-[#11150d] transition-colors hover:bg-[#d5fa8a] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c7f36b]"
+            >
+              Explore my work <span aria-hidden="true" className="ml-2">↘</span>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c7f36b]"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+        <div className="order-1 mx-auto md:order-2">
+          <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.03] p-3 shadow-2xl shadow-black/30">
+            <div aria-hidden="true" className="absolute -inset-4 -z-10 rounded-full bg-[#c7f36b]/10 blur-2xl" />
           <Image
             src="/avatar.jpg"
             alt="Jonel Chico"
-            width={176}
-            height={176}
-            className="object-cover"
+            width={280}
+            height={340}
+            priority
+            className="h-64 w-52 rounded-[1.5rem] object-cover sm:h-80 sm:w-64"
           />
-        </motion.div>
-
-        {/* Name */}
-        <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-teal-400 to-blue-400 bg-clip-text text-transparent mb-2">
-          Jonel Chico
-        </h1>
-
-        {/* Role / Title */}
-        <motion.p
-          className="text-xl md:text-2xl font-semibold text-teal-300 mb-4"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
-          Software Engineer
-        </motion.p>
-
-        {/* Tagline */}
-        <p className="text-lg text-gray-300">
-          Dedicated to delivering reliable, user-focused digital solutions.
-        </p>
-      </motion.div>
-
-      {/* Scroll Arrow */}
-      <motion.div
-        className="absolute bottom-10 cursor-pointer z-20"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-        onClick={() =>
-          document
-            .getElementById("about")
-            ?.scrollIntoView({ behavior: "smooth" })
-        }
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="w-8 h-8 text-gray-300"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+          </div>
+        </div>
       </motion.div>
     </section>
   );

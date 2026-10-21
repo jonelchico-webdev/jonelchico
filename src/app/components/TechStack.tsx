@@ -27,38 +27,28 @@ export const TechStackSection = () => {
   return (
     <motion.section
       id="tech"
-      className="py-20 px-6 bg-gray-950 text-center text-gray-200"
+      className="border-y border-white/10 bg-[#101410] px-6 py-20 text-[#f2f4ef] sm:py-24"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-semibold mb-12 text-green-400">
-        Tech Stack
-      </h2>
-      <div className="flex flex-wrap justify-center gap-8">
-        {techs.map((tech, index) => (
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10">
+          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#c7f36b]">Tools of the trade</p>
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Technologies I work with</h2>
+        </div>
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {techs.map((tech) => (
           <motion.div
             key={tech.name}
-            className="flex flex-col items-center justify-center w-24 h-24 bg-gray-900 rounded-xl shadow-lg cursor-pointer"
-            whileHover={{ scale: 1.1 }}
-            animate={{
-              boxShadow: [
-                `0 0 10px rgba(34,197,94,0.6)`, // green glow
-                `0 0 10px rgba(20,184,166,0.6)`, // teal glow
-                `0 0 10px rgba(59,130,246,0.6)`, // blue glow
-              ],
-            }}
-            transition={{
-              duration: 3 + index * 0.2,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
+            className="flex min-h-20 items-center gap-3 rounded-xl border border-white/10 bg-[#0b0e0c] px-4 py-3 transition-colors hover:border-[#c7f36b]/35"
           >
-            <div className="text-4xl mb-2">{tech.icon}</div>
-            <p className="text-sm">{tech.name}</p>
+            <span aria-hidden="true" className="text-2xl">{tech.icon}</span>
+            <p className="text-sm font-medium text-white/80">{tech.name}</p>
           </motion.div>
         ))}
+        </div>
       </div>
     </motion.section>
   );

@@ -60,52 +60,65 @@ export const ProjectsSection = () => {
   return (
     <motion.section
       id="projects"
-      className="py-20 px-6 bg-gray-900 text-center text-gray-200"
+      className="px-6 py-20 text-[#f2f4ef] sm:py-28"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <h2 className="text-3xl font-semibold mb-12 text-green-400">Projects</h2>
-
-      <div className="grid gap-8 max-w-5xl mx-auto sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-10 flex flex-col justify-between gap-4 sm:mb-14 sm:flex-row sm:items-end">
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#c7f36b]">Selected work</p>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Projects I’m proud of</h2>
+          </div>
+          <p className="max-w-sm text-sm leading-6 text-white/55">
+            A few examples of the products and systems I’ve helped bring to life.
+          </p>
+        </div>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((project, index) => (
           <motion.article
             key={project.title}
-            className="flex flex-col text-left p-6 bg-gray-950 rounded-xl shadow-lg border border-white/5"
-            initial={{ opacity: 0, y: 20 }}
+            className="group flex flex-col rounded-2xl border border-white/10 bg-[#111511] p-6 transition-colors duration-200 hover:border-[#c7f36b]/40 hover:bg-[#141914]"
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
+            transition={{ duration: 0.45, delay: index * 0.08 }}
             viewport={{ once: true }}
-            whileHover={{ scale: 1.03 }}
           >
-            <h3 className="text-xl font-semibold mb-2 text-teal-300">
+            <div className="mb-7 flex items-center justify-between border-b border-white/10 pb-4">
+              <span className="text-xs font-medium uppercase tracking-[0.16em] text-white/45">
+                Project {String(index + 1).padStart(2, "0")}
+              </span>
+              <span aria-hidden="true" className="text-lg text-[#c7f36b]">↗</span>
+            </div>
+            <h3 className="mb-3 text-xl font-semibold leading-snug tracking-tight text-white">
               {project.title}
             </h3>
-            <p className="text-sm text-gray-300 leading-relaxed mb-4 flex-grow">
+            <p className="mb-6 flex-grow text-sm leading-6 text-white/60">
               {project.description}
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
+            <div className="mb-6 flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs px-2 py-1 rounded-full bg-white/5 text-gray-300"
+                  className="rounded-full border border-white/10 px-2.5 py-1 text-xs text-white/60"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <div className="flex gap-4 mt-auto">
+            <div className="mt-auto flex gap-5 border-t border-white/10 pt-4">
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-green-400 hover:text-green-300 transition-colors"
+                  className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#c7f36b] transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]"
                 >
-                  <FaExternalLinkAlt /> Live
+                  <FaExternalLinkAlt aria-hidden="true" /> Visit site
                 </a>
               )}
               {project.repoUrl && (
@@ -113,14 +126,15 @@ export const ProjectsSection = () => {
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors"
+                  className="inline-flex min-h-11 items-center gap-2 text-sm font-medium text-white/65 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]"
                 >
-                  <FaGithub /> Code
+                  <FaGithub aria-hidden="true" /> Source code
                 </a>
               )}
             </div>
           </motion.article>
         ))}
+        </div>
       </div>
     </motion.section>
   );
