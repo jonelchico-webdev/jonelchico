@@ -1,29 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaGitAlt } from "react-icons/fa";
-import {
-  SiNextdotjs,
-  SiTypescript,
-  SiTailwindcss,
-  SiMui,
-  SiStripe,
-  SiSanity,
-} from "react-icons/si";
+
+const stackGroups = [
+  {
+    title: "Frontend",
+    description: "Building responsive, polished web experiences.",
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "MUI",
+      "Vite",
+      "GSAP",
+      "React Router",
+    ],
+  },
+  {
+    title: "Backend & data",
+    description: "APIs, persistence, and application infrastructure.",
+    technologies: [
+      "Node.js",
+      "NestJS",
+      "Fastify",
+      "PostgreSQL",
+      "Prisma",
+      "Redis",
+      "Supabase",
+      "AWS S3",
+      "JWT",
+      "Swagger",
+      "Jest",
+    ],
+  },
+  {
+    title: "Platforms & tooling",
+    description: "The services and tools behind shipped products.",
+    technologies: ["Git", "Stripe", "Sanity", "jsPDF"],
+  },
+];
 
 export const TechStackSection = () => {
-  const techs = [
-    { name: "React", icon: <FaReact className="text-blue-400" /> },
-    { name: "Next.js", icon: <SiNextdotjs className="text-white" /> },
-    { name: "TypeScript", icon: <SiTypescript className="text-blue-600" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss className="text-teal-400" /> },
-    { name: "MUI", icon: <SiMui className="text-blue-500" /> },
-    { name: "Node.js", icon: <FaNodeJs className="text-green-500" /> },
-    { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
-    { name: "Stripe", icon: <SiStripe className="text-purple-400" /> },
-    { name: "Sanity", icon: <SiSanity className="text-green-400" /> },
-  ];
-
   return (
     <motion.section
       id="tech"
@@ -34,20 +53,49 @@ export const TechStackSection = () => {
       viewport={{ once: true }}
     >
       <div className="mx-auto max-w-6xl">
-        <div className="mb-10">
-          <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#c7f36b]">Tools of the trade</p>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Technologies I work with</h2>
+        <div className="mb-10 flex flex-col justify-between gap-4 sm:mb-12 sm:flex-row sm:items-end">
+          <div>
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-[#c7f36b]">
+              The toolkit
+            </p>
+            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+              Technologies across my work
+            </h2>
+          </div>
+          <p className="max-w-sm text-sm leading-6 text-white/55">
+            From user-facing interfaces to APIs, data, and the services that
+            support them.
+          </p>
         </div>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-        {techs.map((tech) => (
-          <motion.div
-            key={tech.name}
-            className="flex min-h-20 items-center gap-3 rounded-xl border border-white/10 bg-[#0b0e0c] px-4 py-3 transition-colors hover:border-[#c7f36b]/35"
-          >
-            <span aria-hidden="true" className="text-2xl">{tech.icon}</span>
-            <p className="text-sm font-medium text-white/80">{tech.name}</p>
-          </motion.div>
-        ))}
+
+        <div className="grid gap-4 md:grid-cols-3">
+          {stackGroups.map((group, index) => (
+            <motion.article
+              key={group.title}
+              className="rounded-2xl border border-white/10 bg-[#0b0e0c] p-5 sm:p-6"
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              viewport={{ once: true }}
+            >
+              <div className="mb-5 border-b border-white/10 pb-4">
+                <h3 className="text-lg font-semibold text-white">{group.title}</h3>
+                <p className="mt-1 text-sm leading-6 text-white/50">
+                  {group.description}
+                </p>
+              </div>
+              <ul className="flex flex-wrap gap-2" aria-label={group.title}>
+                {group.technologies.map((technology) => (
+                  <li
+                    key={technology}
+                    className="rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-white/75"
+                  >
+                    {technology}
+                  </li>
+                ))}
+              </ul>
+            </motion.article>
+          ))}
         </div>
       </div>
     </motion.section>
