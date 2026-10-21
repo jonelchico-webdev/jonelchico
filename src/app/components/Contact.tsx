@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub, FaFilePdf } from "react-icons/fa";
 
 export const ContactSection = () => {
   const contacts = [
@@ -61,6 +61,14 @@ export const ContactSection = () => {
               {contact.name}
             </a>
           ))}
+          <a
+            href="/Jonel-Chico-Resume.pdf"
+            download
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/10 px-4 text-sm text-white/70 transition-colors hover:border-white/30 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]"
+          >
+            <FaFilePdf aria-hidden="true" />
+            CV
+          </a>
         </div>
       </div>
       <footer className="relative mx-auto mt-10 max-w-6xl text-xs text-white/35">

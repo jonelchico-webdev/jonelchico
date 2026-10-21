@@ -26,6 +26,7 @@ export default function Home() {
               <a className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]" href="#projects">Projects</a>
               <a className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]" href="#about">About</a>
               <a className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]" href="#contact">Contact</a>
+              <a className="inline-flex min-h-11 items-center transition-colors hover:text-white focus-visible:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c7f36b]" href="/Jonel-Chico-Resume.pdf" download>CV</a>
             </div>
           </nav>
         </header>

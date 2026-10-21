@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jonelchico.com"),
+  metadataBase: new URL("https://jonelchico.vercel.app"),
   title: "Jonel Chico — Software Engineer & Full-Stack Developer",
   description:
     "Software Engineer and full-stack developer with 7+ years building production React and TypeScript applications, backend services, and enterprise and B2B SaaS platforms.",

@@ -47,6 +47,13 @@ export const HeroSection = () => {
             >
               Get in touch
             </a>
+            <a
+              href="/Jonel-Chico-Resume.pdf"
+              download
+              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/20 px-6 text-sm font-medium text-white transition-colors hover:border-white/50 hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#c7f36b]"
+            >
+              Download CV
+            </a>
           </div>
         </div>
         <div className="order-1 mx-auto md:order-2">
